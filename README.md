@@ -1,4 +1,4 @@
-# ChatGPT Clone with MCP Server Integration
+# Django Chat App with MCP Server Integration
 
 🎉 **SUCCESS! Your advanced ChatGPT clone is now ready with MCP integration!**
 
