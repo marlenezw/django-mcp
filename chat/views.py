@@ -9,7 +9,7 @@ from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 from langchain_mcp_adapters.tools import load_mcp_tools
 from langgraph.prebuilt import create_react_agent
-from langchain_openai import AzureChatOpenAI
+from langchain_azure_ai.chat_models import AzureAIChatCompletionsModel
 from langchain_core.messages import HumanMessage, AIMessage
 from .models import ChatMessage
 
@@ -45,14 +45,15 @@ async def get_mcp_response(user_message: str, chat_history: list = None) -> str:
                 # Check if Azure OpenAI is configured
                 azure_endpoint = settings.AZURE_AI_ENDPOINT
                 azure_api_key = settings.AZURE_AI_API_KEY
-                
+                version = settings.AZURE_AI_API_VERSION
+                model = settings.AZURE_AI_DEPLOYMENT_NAME
                
                 # Use Azure OpenAI
-                llm = AzureChatOpenAI(
-                    azure_endpoint=azure_endpoint,
-                    api_key=azure_api_key,
-                    api_version=settings.AZURE_AI_API_VERSION,
-                    deployment_name=settings.AZURE_AI_DEPLOYMENT_NAME,
+                llm = AzureAIChatCompletionsModel(
+                    endpoint=azure_endpoint,
+                    model=model,
+                    api_version=version,
+                    credential=azure_api_key
                 )
 
                 # Prepare messages with chat history
@@ -89,14 +90,16 @@ async def get_simple_ai_response(user_message: str, chat_history: list = None) -
         # Check if Azure OpenAI is configured
         azure_endpoint = settings.AZURE_AI_ENDPOINT
         azure_api_key = settings.AZURE_AI_API_KEY
+        version = settings.AZURE_AI_API_VERSION
+        model = settings.AZURE_AI_DEPLOYMENT_NAME
         
         # Use Azure OpenAI
-        llm = AzureChatOpenAI(
-            azure_endpoint=azure_endpoint,
-            api_key=azure_api_key,
-            api_version=settings.AZURE_AI_API_VERSION,
-            deployment_name=settings.AZURE_AI_DEPLOYMENT_NAME,
-        )
+        llm = AzureAIChatCompletionsModel(
+                    endpoint=azure_endpoint,
+                    model=model,
+                    api_version=version,
+                    credential=azure_api_key
+                )
         
         # Prepare messages with chat history
         messages = []
