@@ -134,11 +134,12 @@ background: linear-gradient(135deg, #f5f3ff 0%, #e9d5ff 100%);
 You can change the AI model in `chat/views.py`:
 
 ```python
-llm = ChatOpenAI(
-    openai_api_key=api_key,
-    model="gpt-4",  # Change to gpt-4 or other models
-    temperature=0.7
-)
+llm = AzureAIChatCompletionsModel(
+     endpoint=azure_endpoint,
+     model=model,
+     api_version=version,
+     credential=azure_api_key
+ )
 ```
 
 
