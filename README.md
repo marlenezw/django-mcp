@@ -43,7 +43,7 @@ This app now integrates with MCP (Model Context Protocol) servers, specifically 
 
 3. **Install dependencies** (already installed)
    ```bash
-   pip install django langchain-openai langchain-mcp-adapters langgraph mcp python-dotenv
+   pip install -r requirements.txt
    ```
 
 4. **Configure API Keys**
