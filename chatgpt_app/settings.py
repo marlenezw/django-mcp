@@ -127,14 +127,12 @@ STATICFILES_DIRS = [
 
 # OpenAI Configuration
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
-AZURE_AI_API_KEY = os.getenv('OPENAI_API_KEY')
-AZURE_AI_ENPOINT = os.getenv('AZURE_AI_ENPOINT')
 
 # Azure OpenAI Configuration
-AZURE_AI_ENDPOINT = AZURE_AI_ENPOINT
-AZURE_AI_API_KEY = AZURE_AI_API_KEY
-AZURE_AI_API_VERSION = "2024-12-01-preview"
-AZURE_AI_DEPLOYMENT_NAME = "gpt-4.1"
+AZURE_AI_ENDPOINT = os.getenv("AZURE_AI_ENDPOINT")
+AZURE_AI_API_KEY = os.getenv("AZURE_AI_API_KEY")
+AZURE_AI_API_VERSION = os.getenv("AZURE_AI_API_VERSION")
+AZURE_AI_DEPLOYMENT_NAME = os.getenv("AZURE_AI_DEPLOYMENT_NAME")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
