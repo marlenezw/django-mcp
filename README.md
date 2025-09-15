@@ -146,7 +146,3 @@ llm = AzureAIChatCompletionsModel(
 ## License
 
 This project is for educational purposes. Please respect OpenAI's usage policies when using their API.
-
----
-
-🎉 **Your ChatGPT clone is ready!** Visit `http://127.0.0.1:8000/` to start chatting!
