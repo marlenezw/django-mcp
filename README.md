@@ -1,8 +1,8 @@
 # Django Chat App with MCP Server Integration
 
-🎉 **SUCCESS! Your advanced ChatGPT clone is now ready with MCP integration!**
-
 A simple Django web application that mimics ChatGPT's interface with a beautiful light purple theme. This app primarily uses LangChain Azure AI (but can be used with OpenAI), and MCP (Model Context Protocol) servers to provide intelligent AI responses with enhanced capabilities.
+
+![django-app-image](./images/django-mcp-cover.png)
 
 ## Features
 
