@@ -2,18 +2,16 @@
 
 🎉 **SUCCESS! Your advanced ChatGPT clone is now ready with MCP integration!**
 
-A simple Django web application that mimics ChatGPT's interface with a beautiful light purple theme. This app uses LangChain, OpenAI/Azure OpenAI, and MCP (Model Context Protocol) servers to provide intelligent AI responses with enhanced capabilities.
+A simple Django web application that mimics ChatGPT's interface with a beautiful light purple theme. This app primarily uses LangChain Azure AI (but can be used with OpenAI), and MCP (Model Context Protocol) servers to provide intelligent AI responses with enhanced capabilities.
 
 ## Features
 
-- 🎨 Beautiful ChatGPT-like interface with light purple theme
-- 🤖 AI-powered responses using OpenAI's GPT-3.5-turbo or Azure OpenAI
-- 🔌 **MCP Server Integration**: Enhanced with Microsoft 365 MCP server capabilities
-- 🛠️ **React Agent**: Uses LangGraph React agent for advanced tool usage
-- 💬 Real-time chat functionality
-- 📱 Responsive design for mobile and desktop
+- Beautiful ChatGPT-like interface with light purple theme
+- AI-powered responses using gpt-4.1
+- **MCP Server Integration**: Enhanced with ability to add any mcp server
+- **React Agent**: Uses LangGraph React agent for advanced tool usage
+- Real-time chat functionality
 - 💾 Message history saved to database
-- ⚡ Fast and lightweight with intelligent fallback
 
 ## What's New: MCP Integration
 
@@ -52,12 +50,7 @@ This app now integrates with MCP (Model Context Protocol) servers, specifically 
    - Open the `.env` file in the root directory
    - Configure either OpenAI OR Azure OpenAI credentials:
 
-   **Option A: OpenAI (recommended for simplicity)**
-   ```
-   OPENAI_API_KEY=sk-your-actual-api-key-here
-   ```
-
-   **Option B: Azure OpenAI (enterprise)**
+   **Option A: **Azure AI** (This should also work with Github models for free!) 
    ```
    AZURE_AI_ENDPOINT=https://your-resource.openai.azure.com/
    AZURE_AI_API_KEY=your-azure-api-key-here
@@ -65,12 +58,17 @@ This app now integrates with MCP (Model Context Protocol) servers, specifically 
    AZURE_AI_DEPLOYMENT_NAME=gpt-4
    ```
 
-5. **Run database migrations** (already done)
+    **Option B: OpenAI**
+   ```
+   OPENAI_API_KEY=sk-your-actual-api-key-here
+   ```
+
+5. **Run database migrations**
    ```bash
    python manage.py migrate
    ```
 
-6. **Start the development server** (already running)
+6. **Start the development server**
    ```bash
    python manage.py runserver
    ```
@@ -81,17 +79,10 @@ This app now integrates with MCP (Model Context Protocol) servers, specifically 
 2. You'll see a beautiful ChatGPT-like interface
 3. Type your message in the input field and press "Send"
 4. The AI will respond using:
-   - **First**: MCP React agent with Microsoft 365 tools
-   - **Fallback**: Direct OpenAI/Azure OpenAI if MCP fails
+   - **First**: MCP React agent with any tools you've provided
+   - **Fallback**: Direct OpenAI/Azure AI if MCP fails
    - **Demo**: Simple message if no API keys are configured
 
-## Getting Your OpenAI API Key
-
-1. Go to [OpenAI's website](https://platform.openai.com/)
-2. Sign up or log in to your account
-3. Navigate to the API section
-4. Create a new API key
-5. Copy the key and paste it in your `.env` file
 
 ## Project Structure
 
@@ -150,42 +141,6 @@ llm = ChatOpenAI(
 )
 ```
 
-## Troubleshooting
-
-### Common Issues
-
-1. **"Module not found" errors**
-   - Make sure you activated the virtual environment: `source venv/bin/activate`
-
-2. **"Invalid API key" errors**
-   - Check that your OpenAI API key is correctly set in the `.env` file
-   - Ensure you have credits available in your OpenAI account
-
-3. **Server won't start**
-   - Make sure no other application is using port 8000
-   - Try running on a different port: `python manage.py runserver 8001`
-
-4. **Database errors**
-   - Run migrations again: `python manage.py migrate`
-
-## Development
-
-To continue developing this app:
-
-1. **Add new features** in the `chat` app
-2. **Modify the UI** by editing the HTML template
-3. **Add more AI models** by updating the views
-4. **Add user authentication** for personalized conversations
-
-## Production Deployment
-
-For production deployment:
-
-1. Set `DEBUG = False` in settings
-2. Configure a proper database (PostgreSQL recommended)
-3. Set up a web server (nginx + gunicorn)
-4. Use environment variables for all secrets
-5. Enable HTTPS
 
 ## License
 
