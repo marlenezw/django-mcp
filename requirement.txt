@@ -3,3 +3,4 @@ mcp==1.14.0
 langchain-mcp-adapters==0.1.9
 langchain-azure-ai==0.1.5
 langgraph==0.6.7
+dotenv-python==0.0.1
