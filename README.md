@@ -11,7 +11,7 @@ A simple Django web application that mimics ChatGPT's interface with a light pur
 - **MCP Server Integration**: Enhanced with ability to add any mcp server
 - **React Agent**: Uses LangGraph React agent for advanced tool usage
 - Real-time chat functionality
-- 💾 Message history saved to database
+- Message history saved to database
 
 ## What's New: MCP Integration
 
