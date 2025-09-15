@@ -1,6 +1,6 @@
 # Django Chat App with MCP Server Integration
 
-A simple Django web application that mimics ChatGPT's interface with a beautiful light purple theme. This app primarily uses LangChain Azure AI (but can be used with OpenAI), and MCP (Model Context Protocol) servers to provide intelligent AI responses with enhanced capabilities.
+A simple Django web application that mimics ChatGPT's interface with a light purple theme. This app uses [LangChain Azure AI](https://github.com/langchain-ai/langchain-azure), but can be updated to use any other model, and MCP (Model Context Protocol) servers to provide intelligent AI responses with enhanced capabilities. The example from my DjangoCon talk uses the [Hugging Face MCP server](https://huggingface.co/settings/mcp). Update the `views.py` file to add your hugingface token. Add an `.env` file or update the `settings.py` file to add your Azure AI credtentials.
 
 ![django-app-image](./images/django-mcp-cover.png)
 
